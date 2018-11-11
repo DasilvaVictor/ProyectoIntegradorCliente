@@ -1,0 +1,48 @@
+
+<div class="container-fluid">
+<h3 >Mantenimiento de habitaciones</h3>
+
+<button [routerLink]='["/habitaciones-agregar"]' 
+class="btn btn-primary btn-md glyphicon glyphicon-plus" aria-hidden="true"></button>
+
+<p *ngIf="!(habitaciones && habitaciones.length)">
+  No existen registros para mostrar
+</p>
+
+<div class="table-responsive">
+<table class="table " *ngIf="(habitaciones && habitaciones.length)">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Numero</th>
+      <th>Detalle</th>
+      <th>Precio</th>
+      <th>Tipo</th>
+      <th>Estado</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let habitacion of habitaciones">
+      <td>{{habitacion.codigo}}</td>
+      <td>{{habitacion.numero}}</td>
+      <td>{{habitacion.detalle}}</td>
+      <td>{{habitacion.precio}}</td>
+      <td>{{habitacion.tipo.tipoHabitacion}}</td>
+      <td>{{habitacion.estado.estadoHabitacion}}</td>
+      
+     
+      
+      <td>
+        <button class="btn btn-primary btn-sm glyphicon glyphicon-pencil" 
+        [routerLink]='["/habitaciones-editar/" + habitacion.codigo]' aria-hidden="true"></button>
+
+        <button class="btn btn-secundary btn-sm glyphicon glyphicon-remove" 
+        (click)="delete(habitacion)" aria-hidden="true"></button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>

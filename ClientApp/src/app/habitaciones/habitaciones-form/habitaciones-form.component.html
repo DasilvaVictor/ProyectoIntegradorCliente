@@ -1,0 +1,126 @@
+<h1>Agregar Habitacion</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="Save()" [formGroup]="formGroup">
+    <fieldset>
+      <div class="form-group"
+            [ngClass]="{'has-error':(formGroup.get('numero').touched || formGroup.get('numero').dirty) && !formGroup.get('numero').valid}">
+          <label class="col-md-4 control-label" 
+                  for="numeroId">Numero</label>
+
+          <div class="col-md-4">
+            <input class="form-control" 
+                    id="numeroId"
+                    type="number"
+                    min="100"
+                    required
+                    formControlName="numero" />
+            <span class="help-block" *ngIf="(formGroup.get('numero').touched || formGroup.get('numero').dirty) && formGroup.get('numero').errors">
+              <span *ngIf="formGroup.get('numero').errors.required">
+                  El campo Numero es requerido
+              </span>
+            </span>
+          </div>
+          </div>
+
+
+          <div class="form-group"
+            [ngClass]="{'has-error':(formGroup.get('detalle').touched || formGroup.get('detalle').dirty) && !formGroup.get('detalle').valid}">
+          <label class="col-md-4 control-label" 
+                  for="detalleId">Detalle</label>
+
+          <div class="col-md-4">
+            <input class="form-control" 
+                    id="detalleId"
+                    type="text"
+                    required
+                    formControlName="detalle" />
+            <span class="help-block" *ngIf="(formGroup.get('detalle').touched || formGroup.get('detalle').dirty) && formGroup.get('detalle').errors">
+              <span *ngIf="formGroup.get('detalle').errors.required">
+                  El campo Detalle es requerido
+              </span>
+            </span>
+          </div>
+          </div>
+
+          <div class="form-group"
+            [ngClass]="{'has-error':(formGroup.get('precio').touched || formGroup.get('precio').dirty) && !formGroup.get('precio').valid}">
+          <label class="col-md-4 control-label" 
+                  for="precioId">Precio</label>
+
+                  <div class="col-md-4">
+                    <input class="form-control" 
+                            id="precioId"
+                            type="text"
+                            required
+                            formControlName="precio" />
+     
+            <span class="help-block" *ngIf="(formGroup.get('precio').touched || formGroup.get('precio').dirty) && formGroup.get('precio').errors">
+              <span *ngIf="formGroup.get('precio').errors.required">
+                  El campo Precio es requerido
+              </span>
+            </span>
+          </div>
+          </div>
+
+          
+          <div formGroupName="estado">
+              <div class="form-group">
+              <label class="col-md-4 control-label" 
+                      for="estadoId">Estado</label>
+    
+                      <div class="col-md-4">
+                        <select class="form-control"
+                                id="estadoId"
+                                formControlName="estadoHabitacion">
+                          <option value="">Porfavor seleccione un estado</option>
+                          <option *ngFor="let e of estados" [value]="e">{{e}}</option>
+                          
+                        </select>
+              </div>
+              </div>
+              </div>
+    
+    
+            
+              <div formGroupName="tipo">
+              <div class="form-group">
+            <label class="col-md-4 control-label" 
+                    for="tipoId">Tipo</label>
+    
+                    <div class="col-md-4">
+                      <select class="form-control"
+                              id="tipoId"
+                              formControlName="tipoHabitacion">
+                        <option value="">Porfavor seleccione un tipo</option>
+                        <option *ngFor="let t of tipos" [value]="t">{{t}}</option>
+                    </select>
+            </div>
+            </div>
+            </div>
+
+
+         
+
+          <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+              <span>
+                <button class="btn btn-primary btn-md"
+                        type="submit"
+                        [disabled]="!formGroup.valid">
+                Salvar
+                </button>
+                <button class="btn btn-secundary btn-md"
+                        [routerLink]='["/habitaciones"]'>
+                  Cancelar
+                </button>
+
+              </span>
+
+            </div>
+
+          </div>
+   </fieldset>
+</form>
+<p>
+    Form Status: {{ formGroup.status }}
+  </p>

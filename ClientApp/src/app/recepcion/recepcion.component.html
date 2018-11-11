@@ -1,0 +1,23 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <app-header></app-header>
+        </div>
+      </div>
+
+<div class="row" >
+  <div class="col-md-1" *ngFor="let habitacion of habitaciones">
+      <a href="#">
+    <div class="thumbnail ">
+      <div class="caption bg-success">
+          
+        <h4 class="text-center">{{habitacion.numero}}</h4>
+      
+      </div>
+    </div>
+  </a>
+  </div>
+</div>
+</div>
