@@ -6,8 +6,8 @@ export interface IHabitacion {
   numero: number;
   detalle: string;
   precio: number;
-  estado:IEstado;
-  tipo:ITipo,
+  estadoHabitaciones:IEstado;
+  tipoHabitaciones:ITipo,
   
  
 }

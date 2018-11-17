@@ -38,12 +38,12 @@ export class HabitacionesFormComponent implements OnInit {
       numero:'',
       detalle:'',
       precio:"",
-      estado:this.fb.group({
+      estadoHabitaciones:this.fb.group({
         id:'0',
         estadoHabitacion:'',
         habitacionId:this.habitacionCodigo!=null?this.habitacionCodigo:0
       }),
-      tipo:this.fb.group({ 
+      tipoHabitaciones:this.fb.group({ 
         id:'0',
         tipoHabitacion:'',
         habitacionId:this.habitacionCodigo!=null?this.habitacionCodigo:0

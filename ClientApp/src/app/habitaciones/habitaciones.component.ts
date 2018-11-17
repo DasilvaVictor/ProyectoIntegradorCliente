@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IHabitacion } from './habitacion';
 import { HabitacionesService } from './habitaciones.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { IEstado } from './habitaciones-form/Estado';
+import { ITipo } from './habitaciones-form/Tipo';
 
 @Component({
   selector: 'app-habitaciones',
@@ -11,6 +13,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class HabitacionesComponent implements OnInit {
 
   habitaciones: IHabitacion[];
+  estados:IEstado[];
+  tipos:ITipo[];
 
   constructor(private HabitacionesService:HabitacionesService) { }
 

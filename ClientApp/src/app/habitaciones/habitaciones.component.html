@@ -14,8 +14,8 @@ class="btn btn-primary btn-md glyphicon glyphicon-plus" aria-hidden="true"></but
   <thead>
     <tr>
       <th>Codigo</th>
-      <th>Numero</th>
       <th>Detalle</th>
+      <th>Numero</th>
       <th>Precio</th>
       <th>Tipo</th>
       <th>Estado</th>
@@ -25,14 +25,12 @@ class="btn btn-primary btn-md glyphicon glyphicon-plus" aria-hidden="true"></but
   <tbody>
     <tr *ngFor="let habitacion of habitaciones">
       <td>{{habitacion.codigo}}</td>
-      <td>{{habitacion.numero}}</td>
       <td>{{habitacion.detalle}}</td>
+      <td>{{habitacion.numero}}</td>
       <td>{{habitacion.precio}}</td>
-      <td>{{habitacion.tipo.tipoHabitacion}}</td>
-      <td>{{habitacion.estado.estadoHabitacion}}</td>
-      
-     
-      
+      <td>{{habitacion.estadoHabitaciones.estadoHabitacion}}</td>
+      <td>{{habitacion.tipoHabitaciones.tipoHabitacion}}</td>
+         
       <td>
         <button class="btn btn-primary btn-sm glyphicon glyphicon-pencil" 
         [routerLink]='["/habitaciones-editar/" + habitacion.codigo]' aria-hidden="true"></button>
